@@ -7,10 +7,19 @@
        bundle. The configuration of OSGi definitions is kept in a separate 
        configuration file so that this file can easily be used
        for integration testing outside of an OSGi environment -->
-    <!--<bean name="hello" class="com.spring.beans.HelloWorld" init-method="init">-->
-        <!--<property name="name" value="Harsh"/>-->
-    <!--</bean>-->
-    <bean name="dbConn" class="com.spring.beans.DatabaseConnection" destroy-method="closeConnection">
 
+    <bean name="constantProperites" class="com.spring.properites.ConstantProperites"></bean>
+
+    <bean name="hello" class="com.spring.beans.PrintData" init-method="init"  >
+        <!--<property name="name" value="Harsh"/>-->
+        <!--<constructor-arg value="Harsh" ></constructor-arg>-->
+
+    </bean>
+
+    <bean name="dbConn" class="com.spring.beans.DatabaseConnection"  destroy-method="closeConnection">
+        <constructor-arg type="String" value="com.mysql.jdbc.Driver"></constructor-arg>
+        <constructor-arg type="String" value="jdbc:mysql://localhost:3306/test"></constructor-arg>
+        <constructor-arg type="String" value="root"></constructor-arg>
+        <constructor-arg type="String" value=""></constructor-arg>
     </bean>
 </beans>

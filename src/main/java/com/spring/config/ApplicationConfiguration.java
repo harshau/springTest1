@@ -1,6 +1,6 @@
 package com.spring.config;
 
-import com.spring.beans.HelloWorld;
+import com.spring.beans.PrintData;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfiguration {
 
     @Bean
-    public HelloWorld helloWorld(){
-        return new HelloWorld();
+    public PrintData helloWorld(){
+        return new PrintData();
     }
 }

@@ -7,7 +7,7 @@
        bundle. The configuration of OSGi definitions is kept in a separate 
        configuration file so that this file can easily be used
        for integration testing outside of an OSGi environment -->
-    <bean name="hello" class="com.spring.beans.HelloWorld">
+    <bean name="hello" class="com.spring.beans.PrintData">
         <property name="name" value="Harsh"/>
     </bean>
 </beans>
