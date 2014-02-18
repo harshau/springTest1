@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e7de0ad-e837-4a8e-be82-d66f81cc8dc0" name="Default" comment="Initial commit&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/spring/properites/ConstantProperites.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/jpa/entity/TestTable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/displayMessages.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/persistance.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/spring/beans/HelloWorld.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beans/PrintData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/config/ApplicationConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/config/ApplicationConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/beans/DatabaseConnection.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/beans/DatabaseConnection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/TestSpring.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/TestSpring.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/spring/core/TestSpring2.java" afterPath="$PROJECT_DIR$/src/main/java/com/spring/core/TestSpring2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring/bundle-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/spring/bundle-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/springConfig.xml" afterPath="$PROJECT_DIR$/src/main/resources/springConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/springTest.iml" afterPath="$PROJECT_DIR$/springTest.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="0e7de0ad-e837-4a8e-be82-d66f81cc8dc0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="springTest.iws" />
@@ -156,7 +142,7 @@
       <file leaf-file-name="persistance.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/persistance.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="14" selection-start="440" selection-end="440" vertical-scroll-proportion="0.26373628" vertical-offset="0" max-vertical-offset="455">
+            <state line="6" column="67" selection-start="401" selection-end="401" vertical-scroll-proportion="0.1978022" vertical-offset="0" max-vertical-offset="455">
               <folding />
             </state>
           </provider>
@@ -617,6 +603,11 @@
       <created>1392185955422</created>
       <updated>1392185955422</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit&#10;">
+      <created>1392702878718</created>
+      <updated>1392702878718</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -968,7 +959,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/persistance.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="14" selection-start="440" selection-end="440" vertical-scroll-proportion="0.26373628" vertical-offset="0" max-vertical-offset="455">
+        <state line="6" column="67" selection-start="401" selection-end="401" vertical-scroll-proportion="0.1978022" vertical-offset="0" max-vertical-offset="455">
           <folding />
         </state>
       </provider>
