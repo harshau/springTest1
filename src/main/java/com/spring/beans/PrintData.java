@@ -1,9 +1,5 @@
 package com.spring.beans;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import java.beans.ConstructorProperties;
-
 /**
  * Created by harsh on 2/12/14.
  */
@@ -19,7 +15,7 @@ public class PrintData {
         System.out.println("inside Init");
     }
 
-     @Value("#{constantProperites.name}")
+
     private String name;
 
 
@@ -27,11 +23,11 @@ public class PrintData {
         return "Welcome to spring: "+name;
     }
 
-    /*public String getName() {
+    public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }*/
+    }
 }

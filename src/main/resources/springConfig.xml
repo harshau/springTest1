@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/data/jpa
+
+                           ">
 
   <!-- regular spring configuration file defining the beans for this
        bundle. The configuration of OSGi definitions is kept in a separate 
@@ -11,7 +15,7 @@
     <bean name="constantProperites" class="com.spring.properites.ConstantProperites"></bean>
 
     <bean name="hello" class="com.spring.beans.PrintData" init-method="init"  >
-        <!--<property name="name" value="Harsh"/>-->
+        <property name="name" value="Harsh"/>
         <!--<constructor-arg value="Harsh" ></constructor-arg>-->
 
     </bean>
@@ -22,4 +26,6 @@
         <constructor-arg type="String" value="root"></constructor-arg>
         <constructor-arg type="String" value=""></constructor-arg>
     </bean>
+
+
 </beans>
