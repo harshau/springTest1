@@ -1,21 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jpa="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-                           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.springframework.org/schema/data/jpa
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                            http://www.springframework.org/schema/aop   http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+                            http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+                            ">
+    <!-- aspect configuration-->
+    <aop:aspectj-autoproxy/>
+    <bean id="helloAspect" name="helloAspect" class="com.spring.aspect.PrintDataAspect"/>
 
-                           ">
+    <!-- Hibernate configuration-->
+    <!--datasource object-->
+    <bean id="dataSource" name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value=""/>
+    </bean>
+    <!--hibernate Session factory object-->
+    <bean id="hibernateSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties" >
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+
+        <property name="mappingResources">
+            <list>
+                <value>Person.hbm.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernateSessionFactory"/>
+    </bean>
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="hibernateSessionFactory"/>
+    </bean>
+
+    <bean id="personDao" class="com.spring.hibernate.DAOImpl.PersionDaoImpl">
+        <!--<property name="sessionFactory" ref="hibernateSessionFactory"/>-->
+        <property name="hibernateTemplate" ref="hibernateTemplate" />
+    </bean>
+    <bean id="personBo" class="com.spring.hibernate.businessObjectImpl.PersonImpl">
+        <property name="personDAO" ref="personDao"/>
+    </bean>
 
   <!-- regular spring configuration file defining the beans for this
        bundle. The configuration of OSGi definitions is kept in a separate 
        configuration file so that this file can easily be used
        for integration testing outside of an OSGi environment -->
 
-    <bean name="constantProperites" class="com.spring.properites.ConstantProperites"></bean>
 
-    <bean name="hello" class="com.spring.beans.PrintData" init-method="init"  >
-        <property name="name" value="Harsh"/>
+
+    <bean id="hello" name="hello" class="com.spring.beans.PrintData" init-method="init"  >
+        <property name="name" value="Victoria Uni"/>
         <!--<constructor-arg value="Harsh" ></constructor-arg>-->
 
     </bean>

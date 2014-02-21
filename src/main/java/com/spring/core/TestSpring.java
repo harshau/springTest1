@@ -2,9 +2,7 @@ package com.spring.core;
 
 import com.spring.beans.DatabaseConnection;
 import com.spring.beans.PrintData;
-import com.spring.config.ApplicationConfiguration;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Connection;
@@ -15,11 +13,12 @@ import java.sql.ResultSet;
  */
 public class TestSpring {
     public static void main (String args[]){
-        System.out.println("Hello:");
+        System.out.println("Main method class:  TestSpring");
        ApplicationContext context = new ClassPathXmlApplicationContext("springConfig.xml");
        PrintData obj =(PrintData)context.getBean("hello");
-       System.out.print(obj.printName());
+       System.out.println(obj.printName());
         DatabaseConnection conn = (DatabaseConnection)context.getBean("dbConn");
+        System.out.println("*******************call to Database ***********");
         try {
         conn.init();
             Connection con = conn.getConnection();
@@ -42,7 +41,7 @@ public class TestSpring {
     }
 
 //public static void main(String [] args){
-//    System.out.print("inside TestSpring2");
+//    System.out.print("inside SpringHibernate");
 //    ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
 //    PrintData test = context.getBean(PrintData.class);
 //    test.printName();
