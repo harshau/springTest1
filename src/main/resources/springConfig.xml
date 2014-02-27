@@ -22,6 +22,7 @@
         <property name="username" value="root"/>
         <property name="password" value=""/>
     </bean>
+
     <!--hibernate Session factory object-->
     <bean id="sessionFactory" name="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
@@ -44,63 +45,46 @@
         </property>
 
     </bean>
-
-    <!--<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">-->
-        <!--<property name="dataSource">-->
-            <!--<ref bean="dataSource"/>-->
-        <!--</property>-->
-        <!--<property name="hibernateProperties">-->
-            <!--<props>-->
-                <!--<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>-->
-                <!--<prop key="hibernate.show_sql">true</prop>-->
-            <!--</props>-->
-        <!--</property>-->
-
-        <!--<property name="mappingResources">-->
-            <!--<list>-->
-                <!--<value>Person.hbm.xml</value>-->
-            <!--</list>-->
-        <!--</property>-->
-
-    <!--</bean>-->
-
+    <!-- hibernate TransactionManager configuration -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
+    <!-- hibernate template configuration -->
     <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!--Hibernate DAO Object configuration -->
     <bean id="personDao" class="com.spring.hibernate.DAOImpl.PersionDaoImpl">
-        <!--<property name="sessionFactory" ref="sessionFactory"/>-->
-        <!--<property name="hibernateTemplate" ref="hibernateTemplate" />-->
     </bean>
+
+    <!--hibernate business Object configuration -->
     <bean id="personBo" class="com.spring.hibernate.businessObjectImpl.PersonImpl">
         <property name="applicationDAO" ref="personDao"/>
     </bean>
 
-  <!-- regular spring configuration file defining the beans for this
-       bundle. The configuration of OSGi definitions is kept in a separate 
-       configuration file so that this file can easily be used
-       for integration testing outside of an OSGi environment -->
 
+     <!--JPA Configuration-->
+        <!--entityManager Factory -->
+      <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+          <property name="dataSource" ref="dataSource"/>
+          <property name="jpaVendorAdapter">
+              <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="showSql" value="true"/>
+                <property name="generateDdl" value="true"/>
+              </bean>
+          </property>
+      </bean>
+       <bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+           <property name="entityManagerFactory" ref="entityManagerFactory"/>
+       </bean>
+     <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
 
 
     <bean id="hello" name="hello" class="com.spring.beans.PrintData" init-method="init"  >
         <property name="name" value="Victoria Uni"/>
-        <!--<constructor-arg value="Harsh" ></constructor-arg>-->
-
     </bean>
-
-    <!--<bean name="dbConn" class="com.spring.beans.DatabaseConnection"  destroy-method="closeConnection">-->
-        <!--<constructor-arg type="String" value="com.mysql.jdbc.Driver"></constructor-arg>-->
-        <!--<constructor-arg type="String" value="jdbc:mysql://localhost:3306/test"></constructor-arg>-->
-        <!--<constructor-arg type="String" value="root"></constructor-arg>-->
-        <!--<constructor-arg type="String" value=""></constructor-arg>-->
-    <!--</bean>-->
-
-
 </beans>

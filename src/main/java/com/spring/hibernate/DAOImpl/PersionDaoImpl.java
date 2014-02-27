@@ -89,6 +89,7 @@ public class PersionDaoImpl   implements ApplicationDAO {
 
     public void courseSave(Course course) {
         hibernateTemplate.save(course);
+
     }
 
     public void courseUpdate(Course course) {
