@@ -1,3 +1,14 @@
+Spring Step by Step.
+ - example of IOC
+ - example of Aspect
+ - Spring Hibernate Configuration
+     - Hibernate configuration based on Template and TemplateDAO
+ - Spring One to One , One to Many and Many to Many configuration.
+ - Next step is to working on Junit Test case
+ -
+
+
+
 To facilitate OSGi bundle manifest generation, the archetype offers the choice of two maven plugins.
 
 a. SpringSource Bundlor Plugin 

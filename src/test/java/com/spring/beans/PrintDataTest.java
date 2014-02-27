@@ -11,7 +11,7 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 
-/**Print Data Test
+/**Print Data ApplicationDAOTest
  * Created by harsh on 2/20/14.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -23,7 +23,7 @@ public class PrintDataTest {
 
     @Test
     public void testPrint(){
-        assertNotNull("Constructor Test",hello);
+        assertNotNull("Constructor ApplicationDAOTest",hello);
         String msg = hello.printName();
         String expectedData = "Welcome to spring: Harsh";
         assertEquals("PrintData should be:"+expectedData,expectedData,msg);

@@ -1,9 +1,6 @@
 package com.spring.hibernate.businessObject;
 
-import com.spring.hibernate.model.Course;
-import com.spring.hibernate.model.Person;
-import com.spring.hibernate.model.Stock;
-import com.spring.hibernate.model.Student;
+import com.spring.hibernate.model.*;
 
 /**Person Business Object
  * Created by harsh on 2/21/14.
@@ -14,7 +11,7 @@ public interface PersonBO {
     void update(Person person);
     void delete(Person person);
     Person findPerson(int id);
-
+    void saveObject(Campus obj);
     void saveStock(Stock stock);
 
     void updateStock(Stock stock);
@@ -34,6 +31,8 @@ public interface PersonBO {
     void courseUpdate(Course course);
     void courseDelete(Course course);
     Course findCourse(int id);
+    Campus findCampus(int id);
+
 
 
 

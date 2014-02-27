@@ -1,9 +1,6 @@
 package com.spring.hibernate.DAO;
 
-import com.spring.hibernate.model.Course;
-import com.spring.hibernate.model.Person;
-import com.spring.hibernate.model.Stock;
-import com.spring.hibernate.model.Student;
+import com.spring.hibernate.model.*;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
@@ -20,6 +17,7 @@ public interface ApplicationDAO {
 
     Person findPerson(int id);
 
+    void saveObject(Object obj);
     //student Dao
     @Transactional
     void studentSave(Student student);
@@ -43,7 +41,7 @@ public interface ApplicationDAO {
     void courseDelete(Course course);
 
     Course findCourse(int id);
-
+    Campus findCampus(int id);
 
 
     //stock test

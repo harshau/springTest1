@@ -2,10 +2,7 @@ package com.spring.hibernate.businessObjectImpl;
 
 import com.spring.hibernate.DAO.ApplicationDAO;
 import com.spring.hibernate.businessObject.PersonBO;
-import com.spring.hibernate.model.Course;
-import com.spring.hibernate.model.Person;
-import com.spring.hibernate.model.Stock;
-import com.spring.hibernate.model.Student;
+import com.spring.hibernate.model.*;
 
 /**
  * Created by harsh on 2/21/14.
@@ -22,6 +19,10 @@ public class PersonImpl implements PersonBO {
         this.applicationDAO = applicationDAO;
     }
 
+    public void saveObject(Campus obj){
+
+        applicationDAO.saveObject(obj);
+    }
     @Override
     public void save(Person person) {
         applicationDAO.save(person);
@@ -108,4 +109,9 @@ public class PersonImpl implements PersonBO {
     public Course findCourse(int id) {
         return applicationDAO.findCourse(id);
     }
+
+    public Campus findCampus(int id){
+        return applicationDAO.findCampus(id);
+    }
+
 }

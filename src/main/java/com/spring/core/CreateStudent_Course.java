@@ -1,6 +1,6 @@
 package com.spring.core;
 
-import com.spring.hibernate.DAO.ApplicationDAO;
+import com.spring.hibernate.businessObject.PersonBO;
 import com.spring.hibernate.model.Course;
 import com.spring.hibernate.model.Person;
 import com.spring.hibernate.model.PersonAddress;
@@ -21,7 +21,7 @@ import java.sql.Timestamp;
 public class CreateStudent_Course {
 
     @Autowired
-    public ApplicationDAO obj;
+    public PersonBO obj;
 
 
     @Test
@@ -53,9 +53,16 @@ public class CreateStudent_Course {
        // obj.studentSave(student);
 
         Course course = new Course();
-        course.setCourseDescription("Fist course Description");
-        course.setCourseName("Course One");
+        course.setCourseDescription("Third course Description");
+        course.setCourseName("Course Third");
         Timestamp startDate= new Timestamp(System.currentTimeMillis());
+
+        course.setStartDate(startDate);
+        course.setEndDate(startDate);
+        obj.courseSave(course);
+        course.setCourseDescription("Four course Description");
+        course.setCourseName("Course Four");
+         startDate= new Timestamp(System.currentTimeMillis());
 
         course.setStartDate(startDate);
         course.setEndDate(startDate);

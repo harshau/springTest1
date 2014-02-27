@@ -14,6 +14,7 @@ public class Course implements Serializable {
 
     @Id
     @GeneratedValue
+    @Column(name = "course_id")
     private int courseId;
 
     @Column (name= "course_Name")
@@ -63,5 +64,16 @@ public class Course implements Serializable {
 
     public void setEndDate(Timestamp endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId=" + courseId +
+                ", courseName='" + courseName + '\'' +
+                ", courseDescription='" + courseDescription + '\'' +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                '}';
     }
 }
