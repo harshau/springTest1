@@ -14,9 +14,10 @@
 	<tx:annotation-driven />
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<!--<mvc:resources mapping="/resources/**" location="/resources/" />-->
 
-	<bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
+    <!--need to add dependency for validator javax.validation-->
+	<!--<bean id="validator"-->
+		<!--class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />-->
 
 </beans>
