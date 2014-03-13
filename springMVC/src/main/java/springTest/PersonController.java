@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import springTest.models.Person;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,9 @@ public class PersonController {
         checkList.add("Course Two");
         checkList.add("Course Three");
         model.addAttribute("checkListValues",checkList);
+        Person person = new Person("harsh","khurana",1,2);
+        view.addObject(person);
+
         //view.addObject(model);
         return view;
     }

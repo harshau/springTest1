@@ -1,0 +1,14 @@
+<project>
+
+    <target name="web">
+        <copy todir="/usr/local/tomcat-d2l/apache-tomcat-7.0.39/webapps/springMVC" verbose="true">
+            <fileset dir="/home/harsh/git/springTest/springMVC/src/main/webapp">
+                <include name="**/*.js"/>
+                <include name="**/*.jsp"/>
+            </fileset>
+        </copy>
+    </target>
+
+    
+
+</project>
